@@ -111,6 +111,96 @@ window.addEventListener('DOMContentLoaded', () => { requestAnimationFrame(() => 
 
 
 /* ===========================================================
+   CONTACT FORM — EmailJS integration
+   -----------------------------------------------------------
+   1. Create a free account at https://www.emailjs.com
+   2. Add an Email Service (e.g. Gmail) -> copy the SERVICE ID
+   3. Create an Email Template with these variables in the body:
+        {{fullName}}  {{email}}  {{phone}}  {{message}}
+      and set the template's "To Email" field to the address
+      you want messages delivered to (your designated inbox).
+      Copy the TEMPLATE ID.
+   4. Go to Account -> General -> copy your PUBLIC KEY.
+   5. Paste all three values below.
+   =========================================================== */
+(function () {
+    const EMAILJS_PUBLIC_KEY = "DIb-Z4LWdvpaD8lvO";   // e.g. "a1B2c3D4e5F6g7H8"
+    const EMAILJS_SERVICE_ID = "service_31c4usq";   // e.g. "service_abc1234"
+    const EMAILJS_TEMPLATE_ID = "template_pvzvse6"; // e.g. "template_xyz9876"
+
+    const form = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const statusEl = document.getElementById("formStatus");
+    if (!form || !submitBtn || !statusEl) return;
+
+    if (typeof emailjs === "undefined") {
+        console.error("EmailJS SDK failed to load. Check your internet connection or the <script> tag in contact.html.");
+        return;
+    }
+
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+    function showStatus(type, message) {
+        statusEl.classList.remove("success", "error", "show");
+        statusEl.innerHTML =
+            `<i class="bi ${type === "success" ? "bi-check-circle-fill" : "bi-exclamation-triangle-fill"}"></i>` +
+            `<span>${message}</span>`;
+        // Force reflow so the transition re-triggers even if a message is already shown
+        void statusEl.offsetWidth;
+        statusEl.classList.add(type, "show");
+    }
+
+    function hideStatus() {
+        statusEl.classList.remove("show");
+    }
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        hideStatus();
+        submitBtn.classList.add("loading");
+        submitBtn.disabled = true;
+
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+            .then(function () {
+                showStatus("success", "Your request has been submitted successfully! We'll get back to you shortly.");
+                form.reset();
+            })
+            .catch(function (error) {
+                console.error("EmailJS error:", error);
+                showStatus("error", "Something went wrong sending your message. Please try again or contact us directly.");
+            })
+            .finally(function () {
+                submitBtn.classList.remove("loading");
+                submitBtn.disabled = false;
+            });
+    });
+})();
+
+
+/* ===========================================================
+   WHATSAPP CHAT BUTTON
+   -----------------------------------------------------------
+   Set your WhatsApp number (country code + number, no spaces,
+   no "+" or leading zeros) and an optional pre-filled message.
+   =========================================================== */
+(function () {
+    const WHATSAPP_NUMBER = "+2349077336298";
+    const WHATSAPP_MESSAGE = "Hello, I'd like to get a pricing for scrap recycling.";
+
+    const whatsappBtn = document.getElementById("whatsappBtn");
+    if (!whatsappBtn) return;
+
+    whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+})();
+
+
+/* ===========================================================
    BACK TO TOP BUTTON
    =========================================================== */
 (function () {

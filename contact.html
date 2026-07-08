@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Bootstrap Icons -->
@@ -18,15 +19,17 @@
 
     <link rel="stylesheet" href="contact.css">
 
-
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <title>Services</title>
 </head>
+
 <body>
 
 
 
-    
+
     <!-- navbar -->
 
     <nav class="navbar navbar-expand-lg py-3 custom-navbar sticky-top">
@@ -54,7 +57,7 @@
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
-                        <button class="btn btn-quote">Get Pricing</button>
+                        <button class="btn btn-quote"><a href="contact.html">Get Pricing</a></button>
                     </li>
                 </ul>
             </div>
@@ -69,7 +72,7 @@
                 <li><a href="wws.html">What We Sell</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li class="mt-4"><button class="btn btn-quote w-100">Get Pricing</button></li>
+                <a href="contact.html" class="btn btn-quote">Get Pricing</a>
             </ul>
         </div>
 
@@ -86,48 +89,71 @@
         <div class="banner fade-slide" id="banner">
             <div class="banner-photo"></div>
             <div class="banner-welcome">
-                 <div class="welcome-eyebrow">WHAT WE SELL</div>
-                <h1 class="welcome-heading">Our Services</h1>
-                <div class="welcome-tag">ghsdhsddhsdhdsdjdsdds</div>
+                <div class="welcome-eyebrow">GET IN TOUCH</div>
+                <h1 class="welcome-heading">Contact Us</h1>
+                <div class="welcome-tag">Please feel free to contact us by filling in our contact form<br>
+                    or getting in touch via the details below</div>
             </div>
         </div>
     </div>
 
 
 
+    <!--  -->
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Contact CTA Section -->
-    <section class="cta-section">
-        <div class="container reveal reveal-scale">
-            <h1>Contact Us <span class="highlight">Now</span></h1>
-            <p> Contact our specialist team now on <a href="tel:+15053566399">+1</a> to find out more and
-                book a free quote. </p> <a href="#" class="btn btn-contact">Contact Us</a>
+    <div class="contact-wrapper"> <!-- Contact Form -->
+        <div class="form-card reveal reveal-up">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm" novalidate>
+                <div class="mb-3"> <label class="form-label" for="fullName">Full Name</label> <input type="text"
+                        class="form-control" id="fullName" name="fullName" placeholder="John Doe" required> </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3"> <label class="form-label" for="email">Email</label> <input type="email"
+                            class="form-control" id="email" name="email" placeholder="john@example.com" required> </div>
+                    <div class="col-md-6 mb-3"> <label class="form-label" for="phone">Phone</label> <input type="tel"
+                            class="form-control" id="phone" name="phone" placeholder="+1 (234) 567-890"> </div>
+                </div>
+                <div class="mb-3"> <label class="form-label" for="message">Message</label> <textarea
+                        class="form-control" id="message" name="message" rows="4"
+                        placeholder="Tell us about the scrap you'd like to sell..." required></textarea> </div>
+                <button type="submit" class="btn-send" id="submitBtn">
+                    <span class="btn-text">Send Message</span>
+                    <span class="btn-loader" aria-hidden="true"></span>
+                </button>
+                <div id="formStatus" role="status" aria-live="polite"></div>
+            </form>
+        </div> <!-- Contact Information -->
+        <h3 class="section-heading">Contact Information</h3>
+        <div class="info-row">
+            <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div>
+                <div class="info-title">Our Location</div>
+                <p class="info-text">8840 NW 102ND Street,<br>Medley, Florida, USA</p>
+            </div>
         </div>
-    </section>
+        <div class="info-row">
+            <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+            <div>
+                <div class="info-title">Call Us</div>
+                <p class="info-text">+1 <br>+1  (WhatsApp)</p>
+            </div>
+        </div>
+        <div class="info-row">
+            <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div>
+                <div class="info-title">Our Email</div>
+                <p class="info-text">info@dolphinpaperroll.com</p>
+            </div>
+        </div> <a
+            href="https://wa.me/+2349077336298?text=Hello%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20scrap%20recycling."
+            id="whatsappBtn" class="whatsapp-btn" target="_blank" rel="noopener"> <i class="bi bi-chat-dots-fill"></i>
+            Chat on WhatsApp </a>
+    </div>
+
+
+
 
 
     <!-- Footer -->
@@ -143,20 +169,20 @@
                 <div class="col-md-6 col-lg-3 reveal reveal-up" data-delay="80">
                     <h6>USEFUL LINKS</h6>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Plastic Scrap</a></li>
-                        <li><a href="#">Metal Scrap</a></li>
-                        <li><a href="#">Rubber Scrap</a></li>
-                        <li><a href="#">Paper Scrap</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="wws.html">Plastic Scrap</a></li>
+                        <li><a href="wws.html">Metal Scrap</a></li>
+                        <li><a href="wws.html">Rubber Scrap</a></li>
+                        <li><a href="wws.html">Paper Scrap</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 reveal reveal-up" data-delay="160">
                     <h6>SERVICES</h6>
                     <ul>
-                        <li><a href="#">Purchasing</a></li>
-                        <li><a href="#">Processing</a></li>
-                        <li><a href="#">Collection</a></li>
+                         <li><a href="services.html">Purchasing</a></li>
+                        <li><a href="services.html">Processing</a></li>
+                        <li><a href="services.html">Collection</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 reveal reveal-up" data-delay="240">
@@ -168,7 +194,7 @@
                         </li>
                         <li><i class="fa-solid fa-phone"></i><span>+1</span></li>
                         <li><i class="fa-brands fa-whatsapp"></i><span>+1 </span></li>
-                        <li><i class="fa-regular fa-envelope"></i><span>.com</span></li>
+                        <li><i class="fa-regular fa-envelope"></i><span>info@dolphinpaperroll.com</span></li>
                     </ul>
                 </div>
             </div>
@@ -192,11 +218,23 @@
 
 
 
+
+
+    <!--  -->
+
+
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="contact.js"></script>
 
-    
+
 </body>
+
 </html>

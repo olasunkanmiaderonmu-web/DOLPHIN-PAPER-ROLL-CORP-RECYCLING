@@ -162,6 +162,12 @@
     transition: color 0.35s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.btn-quote a {
+    text-decoration: none;
+    color: #087F49;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
 .btn-quote::before {
     content: "";
     position: absolute;
@@ -382,8 +388,8 @@ body {
 
 .welcome-tag {
     font-family: 'Poppins', sans-serif;
-    font-size: .95rem;
-    letter-spacing: .06em;
+    font-size: 13px;
+    font-weight: light;
     opacity: .9;
 }
 
@@ -533,6 +539,352 @@ body {
 }
 
 
+
+/*  */
+
+
+:root {
+    --dark-heading: #1c2a3a;
+    --body-gray: #6d7580;
+    --accent-orange: #f4802e;
+    --border-light: #e6e6e6;
+    --icon-bg: #fdece0;
+    --whatsapp-bg: #dcf5e8;
+    --whatsapp-text: #1c8a53;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--body-gray);
+    background-color: #fff;
+}
+
+.contact-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 15px;
+}
+
+.form-card {
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 45px;
+}
+
+.form-card h2 {
+    color: #087F49;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+
+.form-label {
+    color: var(--dark-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.form-control {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    background-color: #fbfbfb;
+}
+
+.form-control:focus {
+    border-color: #087F49;
+    box-shadow: 0 0 0 0.2rem rgba(201, 216, 58, 0.1);
+    background-color: #fff;
+}
+
+.btn-send {
+    background-color: #087F49;
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn-send:hover {
+    background-color: #c9d83a;
+    color: #087F49;
+}
+
+.btn-send:disabled {
+    opacity: 0.7;
+}
+
+.section-heading {
+    color: var(--dark-heading);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+.info-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #087F49;
+    color: #c9d83a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.info-title {
+    color: var(--dark-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.info-text {
+    font-size: 0.9rem;
+    color: var(--body-gray);
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--whatsapp-bg);
+    color: var(--whatsapp-text);
+    font-weight: 600;
+    padding: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.15s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #c9edda;
+    color: var(--whatsapp-text);
+}
+
+/* ===========================================================
+   CONTACT FORM — ENTRANCE ANIMATION
+   =========================================================== */
+.form-card {
+    animation: formCardIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes formCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#contactForm>* {
+    animation: fieldIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+#contactForm>*:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+#contactForm>*:nth-child(2) {
+    animation-delay: 0.28s;
+}
+
+#contactForm>*:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+#contactForm>*:nth-child(4) {
+    animation-delay: 0.52s;
+}
+
+@keyframes fieldIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Focus micro-interaction */
+.form-control {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-control:focus {
+    transform: translateY(-2px);
+}
+
+/* ===========================================================
+   SEND BUTTON — hover lift + loading spinner
+   =========================================================== */
+.btn-send {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease,
+        transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-send:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(8, 127, 73, 0.28);
+}
+
+.btn-send:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn-send .btn-loader {
+    display: none;
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: btnSpin 0.7s linear infinite;
+}
+
+.btn-send.loading .btn-text {
+    opacity: 0.65;
+}
+
+.btn-send.loading .btn-loader {
+    display: inline-block;
+}
+
+@keyframes btnSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===========================================================
+   FORM STATUS MESSAGE — success / error
+   =========================================================== */
+#formStatus {
+    font-size: 0.9rem;
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease, margin-top 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    padding: 0 16px;
+}
+
+#formStatus.show {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 120px;
+    margin-top: 14px;
+    padding: 12px 16px;
+}
+
+#formStatus.success {
+    color: #087f49;
+    background-color: #e6f7ee;
+    border: 1px solid #b7e4c7;
+}
+
+#formStatus.error {
+    color: #a12525;
+    background-color: #fdeaea;
+    border: 1px solid #f3b8b8;
+}
+
+#formStatus i {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* ===========================================================
+   WHATSAPP BUTTON — pulse ring + icon animation
+   =========================================================== */
+.whatsapp-btn {
+    position: relative;
+    isolation: isolate;
+}
+
+.whatsapp-btn i {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.whatsapp-btn:hover i {
+    transform: scale(1.2) rotate(-8deg);
+}
+
+.whatsapp-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    z-index: -1;
+    animation: whatsappPulse 2.6s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(28, 138, 83, 0.35);
+    }
+
+    70% {
+        box-shadow: 0 0 0 14px rgba(28, 138, 83, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(28, 138, 83, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .form-card,
+    #contactForm>*,
+    .whatsapp-btn::after,
+    .btn-send .btn-loader {
+        animation: none !important;
+    }
+
+    .form-card,
+    #contactForm>* {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
 
 
 

@@ -161,6 +161,12 @@
     transition: color 0.35s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.btn-quote a{
+    text-decoration: none;
+    color: #087F49;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
 .btn-quote::before {
     content: "";
     position: absolute;
