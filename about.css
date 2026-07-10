@@ -289,6 +289,13 @@
     width: 100%;
 }
 
+/* Keep the Get Pricing button's own colors/behaviour even though
+   it's an <a> living inside .mobile-nav-links */
+.mobile-nav-links .btn-quote {
+    color: #087f49;
+    background-color: #c9d83a;
+}
+
 @media (min-width: 992px) {
 
     .mobile-nav,
@@ -342,7 +349,7 @@ body {
 .banner-photo {
     position: relative;
     width: 46%;
-    background: url('3.jpg') center/cover no-repeat;
+    background: url('30.jpg') center/cover no-repeat;
     flex-shrink: 0;
     clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
 }

@@ -140,83 +140,88 @@ window.addEventListener('DOMContentLoaded', () => { requestAnimationFrame(() => 
 
     const materialsData = {
         ferrous: {
-            label: 'Ferrous Metal Scrap',
+            label: 'Aluminium UBC Can',
             items: [
-                { name: 'Heavy Melting Steel (HMS 1&2)', brand: 'Grade 1 & 2', img: 'https://picsum.photos/seed/ferrous1/500/400' },
-                { name: 'Structural Steel Scrap', brand: 'Commercial Grade', img: 'https://picsum.photos/seed/ferrous2/500/400' },
-                { name: 'Cast Iron Scrap', brand: 'Foundry Grade', img: 'https://picsum.photos/seed/ferrous3/500/400' },
-                { name: 'Shredded Steel Scrap', brand: 'Processed', img: 'https://picsum.photos/seed/ferrous4/500/400' },
-                { name: 'Rebar & Wire Scrap', brand: 'Construction Grade', img: 'https://picsum.photos/seed/ferrous5/500/400' },
+                { name: 'HDPE Bottle Bales', img: '23.jpg' },
+                { name: 'PET Bottle Bales', img: '47.jpg' },
+                { name: 'PP Regrind', img: '48.jpg' },
+                { name: 'LDPE Film Scrap', img: '49.jpg' },
+                { name: 'Mixed Plastic Regrind', img: '50.jpg' },
             ]
         },
         nonferrous: {
-            label: 'Non-Ferrous Metal Scrap',
+            label: 'OCC Waste Paper Scrap',
             items: [
-                { name: 'Mixed Non-Ferrous Metals', brand: 'Sorted', img: 'https://picsum.photos/seed/nonferrous1/500/400' },
-                { name: 'Zinc Die Cast Scrap', brand: 'Grade A', img: 'https://picsum.photos/seed/nonferrous2/500/400' },
-                { name: 'Lead Scrap', brand: 'Battery Grade', img: 'https://picsum.photos/seed/nonferrous3/500/400' },
-                { name: 'Nickel Alloy Scrap', brand: 'Industrial Grade', img: 'https://picsum.photos/seed/nonferrous4/500/400' },
-                { name: 'Insulated Copper Wire', brand: 'Recyclable', img: 'https://picsum.photos/seed/nonferrous5/500/400' },
+                { name: 'HDPE Bottle Bales', img: '11.jpg' },
+                { name: 'PET Bottle Bales', img: '10.jpg' },
+                { name: 'PP Regrind', img: '6.jpg' },
+                { name: 'LDPE Film Scrap', img: '7.jpg' },
+                { img: '8.jpg' },
             ]
         },
         copper: {
-            label: 'Copper Scrap',
+            label: 'Aluminium Extrusion 6063',
             items: [
-                { name: 'Bare Bright Copper Wire', brand: 'Grade 1', img: 'https://picsum.photos/seed/copper1/500/400' },
-                { name: '#1 Copper Tubing', brand: 'Grade 1', img: 'https://picsum.photos/seed/copper2/500/400' },
-                { name: '#2 Copper Scrap', brand: 'Grade 2', img: 'https://picsum.photos/seed/copper3/500/400' },
-                { name: 'Copper Radiators', brand: 'Clean', img: 'https://picsum.photos/seed/copper4/500/400' },
-                { name: 'Copper Turnings', brand: 'Machine Shop', img: 'https://picsum.photos/seed/copper5/500/400' },
+                { name: 'HDPE Bottle Bales', img: '30.jpg' },
+                { name: 'PET Bottle Bales', img: '53.jpg' },
+                { name: 'PP Regrind', img: '54.jpg' },
+                { name: 'LDPE Film Scrap', img: '55.jpg' },
+                { name: 'Mixed Plastic Regrind', img: '56.jpg' },
             ]
         },
         aluminum: {
-            label: 'Aluminum Scrap',
+            label: 'Copper Wire',
             items: [
-                { name: 'Aluminum Extrusions', brand: '6063 Alloy', img: 'https://picsum.photos/seed/aluminum1/500/400' },
-                { name: 'Aluminum Cans (UBC)', brand: 'Baled', img: 'https://picsum.photos/seed/aluminum2/500/400' },
-                { name: 'Aluminum Sheet Scrap', brand: 'Clean', img: 'https://picsum.photos/seed/aluminum3/500/400' },
-                { name: 'Aluminum Wheels', brand: 'Automotive', img: 'https://picsum.photos/seed/aluminum4/500/400' },
-                { name: 'Aluminum Radiators', brand: 'Mixed', img: 'https://picsum.photos/seed/aluminum5/500/400' },
+                { name: 'HDPE Bottle Bales', img: '13.jpg' },
+                { name: 'PET Bottle Bales', img: '14.jpg' },
+                { name: 'PP Regrind', img: '34.jpg' },
             ]
         },
         stainless: {
-            label: 'Stainless Steel Scrap',
+            label: 'Baled Tyres & Shredded Tyres',
             items: [
-                { name: 'Stainless 304 Scrap', brand: 'Grade 304', img: 'https://picsum.photos/seed/stainless1/500/400' },
-                { name: 'Stainless 316 Scrap', brand: 'Grade 316', img: 'https://picsum.photos/seed/stainless2/500/400' },
-                { name: 'Stainless Turnings', brand: 'Machine Shop', img: 'https://picsum.photos/seed/stainless3/500/400' },
-                { name: 'Stainless Sheet Offcuts', brand: 'Clean', img: 'https://picsum.photos/seed/stainless4/500/400' },
-                { name: 'Stainless Kitchen Equipment', brand: 'Commercial', img: 'https://picsum.photos/seed/stainless5/500/400' },
+                { name: 'HDPE Bottle Bales', img: '22.jpg' },
+                { name: 'PET Bottle Bales', img: '36.jpg' },
+                { name: 'PP Regrind', img: '39.jpg' },
             ]
         },
         paperrolls: {
-            label: 'Paper Rolls',
+            label: 'Altenator Scrap',
             items: [
-                { name: 'Kraft Paper Rolls', brand: 'Recycled Grade', img: 'https://picsum.photos/seed/paper1/500/400' },
-                { name: 'Newsprint Rolls', brand: 'Standard Grade', img: 'https://picsum.photos/seed/paper2/500/400' },
-                { name: 'Tissue Base Rolls', brand: 'Light Grade', img: 'https://picsum.photos/seed/paper3/500/400' },
-                { name: 'Coated Paper Rolls', brand: 'Premium Grade', img: 'https://picsum.photos/seed/paper4/500/400' },
-                { name: 'Liner Board Rolls', brand: 'Heavy Grade', img: 'https://picsum.photos/seed/paper5/500/400' },
+                { name: 'HDPE Bottle Bales', img: '5.jpg' },
+                { name: 'PET Bottle Bales', img: '43.jpg' },
+                { name: 'PP Regrind', img: '44.jpg' },
+                { name: 'PP Regrind', img: '27.jpg' },
+                { name: 'PP Regrind', img: '25.jpg' },
             ]
         },
         cardboard: {
-            label: 'Cardboard & Paper Scrap',
+            label: 'Compressor Scrap',
             items: [
-                { name: 'Old Corrugated Cardboard (OCC)', brand: 'Baled', img: 'https://picsum.photos/seed/cardboard1/500/400' },
-                { name: 'Mixed Office Paper', brand: 'Sorted', img: 'https://picsum.photos/seed/cardboard2/500/400' },
-                { name: 'Sorted White Ledger', brand: 'Grade A', img: 'https://picsum.photos/seed/cardboard3/500/400' },
-                { name: 'Double Lined Kraft', brand: 'Grade DLK', img: 'https://picsum.photos/seed/cardboard4/500/400' },
-                { name: 'Book Stock Scrap', brand: 'Mixed', img: 'https://picsum.photos/seed/cardboard5/500/400' },
+                { name: 'HDPE Bottle Bales', img: '33.jpg' },
+                { name: 'PET Bottle Bales', img: '15.jpg' },
+                { name: 'PP Regrind', img: '16.jpg' },
+                { name: 'LDPE Film Scrap', img: '26.jpg' },
+            ]
+        },
+        alloys: {
+            label: 'Alloy Wheel',
+            items: [
+                { name: 'HDPE Bottle Bales', img: '17.jpg' },
+                { name: 'PET Bottle Bales', img: '18.jpg' },
+                { name: 'PP Regrind', img: '65.jfif' },
+                { name: 'LDPE Film Scrap', img: '66.jfif' },
+                { name: 'Mixed Plastic Regrind', img: '67.jfif' },
             ]
         },
         plastic: {
-            label: 'Plastic Scrap',
+            label: 'HMS Scrap',
             items: [
-                { name: 'HDPE Bottle Bales', brand: 'Post-Consumer', img: 'https://picsum.photos/seed/plastic1/500/400' },
-                { name: 'PET Bottle Bales', brand: 'Clear Grade', img: 'https://picsum.photos/seed/plastic2/500/400' },
-                { name: 'PP Regrind', brand: 'Industrial', img: 'https://picsum.photos/seed/plastic3/500/400' },
-                { name: 'LDPE Film Scrap', brand: 'Baled', img: 'https://picsum.photos/seed/plastic4/500/400' },
-                { name: 'Mixed Plastic Regrind', brand: 'Sorted', img: 'https://picsum.photos/seed/plastic5/500/400' },
+                { name: 'HDPE Bottle Bales', img: '19.jpg' },
+                { name: 'PET Bottle Bales', img: '20.jpg' },
+                { name: 'PP Regrind', img: '21.jpg' },
+                { name: 'LDPE Film Scrap', img: '59.jpg' },
+                { name: 'Mixed Plastic Regrind', img: '60.jpg' },
             ]
         }
     };
@@ -234,8 +239,8 @@ window.addEventListener('DOMContentLoaded', () => { requestAnimationFrame(() => 
                 return '' +
                     '<div class="col-sm-6 col-lg-4 product-card">' +
                     '<div class="product-img-wrap"><img src="' + item.img + '" alt="' + item.name + '" loading="lazy"></div>' +
-                    '<div class="product-name">' + item.name + '</div>' +
-                    '<div class="product-brand">' + item.brand + '</div>' +
+                    '<div class="product-name">' + '</div>' +
+                    '<div class="product-brand">' + '</div>' +
                     '</div>';
             }).join('');
 

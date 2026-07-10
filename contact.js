@@ -190,7 +190,7 @@ window.addEventListener('DOMContentLoaded', () => { requestAnimationFrame(() => 
    no "+" or leading zeros) and an optional pre-filled message.
    =========================================================== */
 (function () {
-    const WHATSAPP_NUMBER = "+2349077336298";
+    const WHATSAPP_NUMBER = "+2347025443478";
     const WHATSAPP_MESSAGE = "Hello, I'd like to get a pricing for scrap recycling.";
 
     const whatsappBtn = document.getElementById("whatsappBtn");
