@@ -75,6 +75,15 @@ window.addEventListener('DOMContentLoaded', () => { requestAnimationFrame(() => 
 
 
 
+/* date update */
+
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+
+
+
+
+
 /* ===========================================================
    NAVBAR SCROLL STATE
    Shrinks the navbar slightly and deepens its shadow once the

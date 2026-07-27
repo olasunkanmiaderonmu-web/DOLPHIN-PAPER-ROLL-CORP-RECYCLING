@@ -434,6 +434,10 @@ body {
     --link-color: #333;
 }
 
+* {
+    font-family: 'Manrope', system-ui, sans-serif;
+}
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     color: var(--text-dark);

@@ -73,6 +73,12 @@ window.addEventListener('DOMContentLoaded', () => { requestAnimationFrame(() => 
 })();
 
 
+/* date update */
+
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+
+
 
 
 /* ===========================================================
